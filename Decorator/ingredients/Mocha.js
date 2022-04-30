@@ -1,6 +1,12 @@
 import { CondimentDecorator } from '../CondimentDecorator.js'
 
 class Mocha extends CondimentDecorator {
+	MOCHACOST = 1.2
+	sizeType = {
+		TALL: 1,
+		GRANDE: 1.2,
+		VENTI: 1.5
+	}
 	constructor(beverage) {
 		super()
 		this.beverage = beverage
@@ -11,7 +17,10 @@ class Mocha extends CondimentDecorator {
 	}
 
 	cost() {
-		return this.beverage.cost() + 1.0;
+		const curCost = this.beverage.cost();
+		const plusOptionCost = this.sizeType[this.beverage.getSize()]
+
+		return (this.MOCHACOST * plusOptionCost) + curCost
 	}
 }
 
