@@ -1,4 +1,4 @@
-class WeatherCondition {
+class WeatherStatistics {
 	constructor(weatherData) {
 		this.weatherData = weatherData;
 		this.weatherData.addObserver(this);
@@ -13,8 +13,8 @@ class WeatherCondition {
 	}
 
 	display() {
-		console.log(`오늘의 날씨는? ${this.temperature}, ${this.humidity}, ${this.pressure}`);
+		console.log(`날씨통계: ${this.temperature}, ${this.humidity}, ${this.pressure}`);
 	}
 }
 
-export { WeatherCondition };
+export { WeatherStatistics };
