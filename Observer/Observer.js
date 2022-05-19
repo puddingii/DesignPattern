@@ -1,21 +1,21 @@
 class Observer {
-	constructor() {
-		this.observer = new Set();
-	}
+  constructor() {
+    this.observer = new Set();
+  }
 
-	addObserver(obs) {
-		this.observer.add(obs);
-	}
+  addObserver(obs) {
+    this.observer.add(obs);
+  }
 
-	removeObserver(obs) {
-		this.observer.delete(obs);
-	}
+  removeObserver(obs) {
+    this.observer.delete(obs);
+  }
 
-	notifyObserver() {
-		this.observer.forEach((ob) => {
-			ob.update(this.temperature, this.humidity, this.pressure);
-		})
-	}
+  notifyObserver() {
+    this.observer.forEach((ob) => {
+      ob.update();
+    });
+  }
 }
 
 export { Observer };
